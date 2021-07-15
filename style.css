@@ -16,10 +16,10 @@ top banner start
 ---------------*/
 
 .top-banner{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
     background-color: rgb(6, 35, 114);
     align-items: center;
+    margin-bottom: 35px;
 }
 .title{
     margin-left: 156px;
@@ -35,12 +35,17 @@ top banner start
     width: 168px;
     text-align: center;
 }
+.banner-title:hover{
+    font-size: 65px;
+}
 .banner-title{
     color: #FFFFFF;
     width: 485px;
     height: 230px;
     font-size: 50px;
     margin-bottom: 0;
+    transition: 2s;
+    position:static;
 }
 
 .banner{
@@ -56,23 +61,137 @@ top banner start
 /*-----------
 top banner end
 --------------*/
-.players{
-    display: grid;
-    grid-template-columns:repeat(3, 1fr);
-    grid-row-gap: 30px;
+.container{
+    display: flex;
+    width: 1050px;
+    border: 2px solid none;
+    margin-left: 180px;
+    margin-top: 35px;
+    margin-bottom: 35px;
 }
 .player-box{
     width: 330px;
-    height: 447px;
-    margin-left: 70px;
-    margin-top: 70px;
+    height: 474px;
     box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.15);
 }
 .player{
     margin: 15px;
 }
 .player img{
-    width: 300px;
-   
+    width: 300px;  
+}
+
+/*-------------
+container end
+--------------*/
+
+/*-----------
+Excessive
+------------*/
+.excessive{
+    display: flex;
+    padding-top: 50px;
+    padding-left: 200px;
+}
+.animation{
+    margin-left: 50px;
+}
+@keyframes sliding {
+    0%{
+        background-color: orangered;
+        left: 0px;
+        top: 0;
+    }
+    25%{
+        top: 250px;
+        background-color: yellow;
+        transform: scale(0.5);
+    }
+    50%{
+        top: 0px;
+        background-color: rgb(175, 72, 12);
+        transform: scale(100%);
+    }
+    75%{
+        top: 125px;
+        background-color: tomato;
+        transform: scale(0.75);
+    }
+    100%{
+        top: 0;
+        background-color: orange;
+        left: 450px;
+    }
+    
+}
+.stage{
+    width: 500px;
+    height: 300px;
+    background-color: lightgreen;
+}
+.ball{
+    width: 50px;
+    height: 50px;
+    background-color: maroon;
+    border-radius: 50%;
+    position: relative;
+    animation: sliding 4s ease-in-out 0.2s infinite alternate;
+    animation-play-state: running;
+}
+/*--------
+Footer
+--------*/
+footer img{
+    width: 483px;
+    margin-top: 100px;
+    margin-left: 350px;
+    padding-bottom: 0;
+
+}
+footer p{
+    text-align: center;
+    margin-top: 0;
+}
+/*----------
+Diaplay device
+--------------*/
+@media only screen and (max-width:688px) {
+    body{
+        margin: 0;
+    }
+    .top-banner{
+        width: 100%;
+        flex-direction: column;
+        margin-left: 130px;
+        background-color: lightcoral;
+    }
+    .container{
+        width: 100%;
+        flex-direction: column;
+        margin-left: 10px;
+    }
+    .player-box{
+        margin-left: 120px;
+    }
+    .excessive{
+        width: 100%;
+        flex-direction: column;
+        padding-left: 0;
+    }
+    .animation{
+        width: 10%;
+        margin-left: 50px;
+
+    }
+    footer{
+        width: 100%;
+    }
+    footer audio, h2{
+        margin-left: 50px;
+    }
+    footer img{
+        width: 50%;
+        margin-left: 50px;
+    }
     
 }
